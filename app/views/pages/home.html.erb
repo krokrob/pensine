@@ -1,2 +1,23 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="d-flex align-items-center" style="height:100vh;">
+  <div class="container">
+    <h1 class="text-center">pensine</h1>
+    <h2 class="text-center"><%= t '.subtitle', default: 'explore your memories' %></h2>
+    <div class="row justify-content-center pt-4">
+      <div class="col-10">
+        <%= simple_form_for(:user, :url => session_path(:user)) do |f| %>
+          <%= f.input :email, placeholder: 'albus@pensine.me' %>
+          <%= f.input :password, placeholder: '********' %>
+          <div class="form-group">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+          <div class="form-group d-flex justify-content-center">
+            <%= f.submit 'Connect', class: "btn btn-primary" %>
+          </div>
+          <%= link_to "Forgot your password?", new_password_path(:user) %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
