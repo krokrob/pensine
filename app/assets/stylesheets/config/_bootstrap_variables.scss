@@ -34,7 +34,8 @@ $input-color:               $light-gray;
 $input-border-color:        none;
 $input-box-shadow:          none;
 $input-placeholder-color:   $light-gray;
-$input-border-radius:       none;
+$input-border-radius:       0px;
+$input-focus-box-shadow:    rgba(255, 255, 255, 0);
 
 // Patch to make simple_form compatible with bootstrap 3
 .invalid-feedback {
