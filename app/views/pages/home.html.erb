@@ -8,15 +8,15 @@
     </h2>
     <div class="d-flex justify-content-center">
       <div class="btn btn-primary"
-           data-action="click->start.display_session_form"
-           data-target="start_button">Start</div>
+           data-action="click->start#displaySessionForm"
+           data-target="start.startButton">Start</div>
     </div>
     <div class="row justify-content-center">
       <div class="col-10">
         <%= simple_form_for :user, :url => session_path(:user),
           html: {
             class: "d-none",
-            data: { target: "session_form" }
+            data: { target: "start.sessionForm" }
            } do |f| %>
           <%= f.input :email, placeholder: 'albus@pensine.me' %>
           <%= f.input :password, placeholder: '********' %>
@@ -27,8 +27,8 @@
           <div class="form-group d-flex justify-content-center">
             <%= f.submit 'Connect', class: "btn btn-primary" %>
           </div>
-          <%= link_to t '.sign_up', default: 'Register',
-            data: { action: 'click->start.display_registration_form' } %>
+          <%= link_to t('.sign_up', default: 'Register'), '#',
+            data: { action: 'click->start#displayRegistrationForm' } %>
           <%= link_to "Forgot your password?", new_password_path(:user) %>
         <% end %>
       </div>
@@ -36,7 +36,7 @@
         <%= simple_form_for :user, :url => registration_path(:user),
           html: {
             class: "d-none",
-            data: { target: "registration_form"}
+            data: { target: "start.registrationForm"}
            } do |f| %>
           <%= f.input :email, placeholder: 'albus@pensine.me' %>
           <%= f.input :password, placeholder: '********' %>
@@ -47,8 +47,8 @@
           <div class="form-group d-flex justify-content-center">
             <%= f.submit 'Connect', class: "btn btn-primary" %>
           </div>
-          <%= link_to t '.sign_in', default: 'Login',
-            data: { action: 'click->start.display_session_form' } %>
+          <%= link_to t('.sign_in', default: 'Login'), '#',
+            data: { action: 'click->start#displaySessionForm' } %>
         <% end %>
       </div>
     </div>
