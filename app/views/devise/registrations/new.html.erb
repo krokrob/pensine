@@ -1,4 +1,26 @@
-<h2>Sign up</h2>
+<div class="d-flex align-items-center" style="height:100vh;">
+  <div class="container">
+    <h1 class="text-center">pensine</h1>
+    <h2 class="text-center"><%= t '.subtitle', default: 'explore your memories' %></h2>
+    <div class="row justify-content-center pt-4">
+      <div class="col-10">
+        <%= simple_form_for(:user, :url => registration_path(:user)) do |f| %>
+          <%= f.input :email, placeholder: 'albus@pensine.me' %>
+          <%= f.input :password, placeholder: '********' %>
+          <div class="form-group">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+          <div class="form-group d-flex justify-content-center">
+            <%= f.submit 'Start', class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
