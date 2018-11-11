@@ -27,9 +27,13 @@
           <div class="form-group d-flex justify-content-center">
             <%= f.submit 'Connect', class: "btn btn-primary" %>
           </div>
-          <%= link_to t('.sign_up', default: 'Register'), '#',
+          <div>
+            <%= link_to "Forgot your password?", new_password_path(:user) %>
+          </div>
+          <div>
+            <%= link_to t('.sign_up', default: 'No account yet?'), '#',
             data: { action: 'click->start#displayRegistrationForm' } %>
-          <%= link_to "Forgot your password?", new_password_path(:user) %>
+          </div>
         <% end %>
       </div>
       <div class="col-10">
@@ -47,7 +51,7 @@
           <div class="form-group d-flex justify-content-center">
             <%= f.submit 'Connect', class: "btn btn-primary" %>
           </div>
-          <%= link_to t('.sign_in', default: 'Login'), '#',
+          <%= link_to t('.sign_in', default: 'Already have an account?'), '#',
             data: { action: 'click->start#displaySessionForm' } %>
         <% end %>
       </div>
