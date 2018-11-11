@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.4.4'
+ruby '2.4.5'
 
 gem 'bootsnap', require: false
 gem 'devise'
@@ -12,7 +12,7 @@ gem 'redis'
 gem 'autoprefixer-rails'
 gem 'bootstrap', '~> 4.1.3'
 gem 'font-awesome-sass', '~> 5.0.9'
-gem 'sass-rails'
+gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
