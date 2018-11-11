@@ -1,25 +1,24 @@
-<h2>Sign up</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true ,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+<div class="d-flex align-items-center" style="min-height: 100vh;">
+  <div class="container pt-2 pb-2">
+    <h1 class="text-center">pensine</h1>
+    <h2 class="text-center">
+      <%= t '.subtitle', default: 'explore your memories' %>
+    </h2>
+    <div class="row justify-content-center">
+      <div class="col-10">
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= f.input :email, placeholder: 'albus@pensine.me' %>
+          <%= f.input :password, placeholder: '********' %>
+          <div class="form-group">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+          <div class="form-group d-flex justify-content-center">
+            <%= f.submit 'Connect', class: "btn btn-primary" %>
+          </div>
+          <%= link_to t('.sign_in', default: 'Already have an account?'), new_session_path(resource_name) %>
+        <% end %>
+      </div>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
