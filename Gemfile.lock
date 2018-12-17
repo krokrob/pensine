@@ -60,7 +60,7 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
-    cloudinary (1.11.0)
+    cloudinary (1.9.1)
       aws_cf_signer
       rest-client
     coderay (1.1.2)
@@ -231,8 +231,8 @@ DEPENDENCIES
   autoprefixer-rails
   bootsnap
   bootstrap (~> 4.1.3)
-  carrierwave
-  cloudinary
+  carrierwave (~> 1.2)
+  cloudinary (~> 1.9.1)
   devise
   dotenv-rails
   font-awesome-sass (~> 5.1)
