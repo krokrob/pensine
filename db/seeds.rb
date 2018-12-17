@@ -8,4 +8,6 @@ memo_attr = [
 
 memo_attr.each do |attr|
   memo = Memory.new(attr)
+  # memo.remote_photo_url = ''
+  memo.save!
 end
