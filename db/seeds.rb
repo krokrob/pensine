@@ -1,7 +1,13 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+memo_attr = [
+  { title: 'First kiss', address: 'Metro Dugommier, Paris', user: User.first },
+  { title: 'The fear of falling', address: 'Oia, Santorini', user: User.first },
+  { title: 'Funny little horses game', address: '12 rue Raspail, Bois-Colombes', user: User.first },
+  { title: 'What happens in Nantes stays in Nantes', address: 'Nantes, France', user: User.first },
+  { title: 'All you need is code', address: '16 Villa Gaudelet', user: User.first }
+]
+
+memo_attr.each do |attr|
+  memo = Memory.new(attr)
+  # memo.remote_photo_url = ''
+  memo.save!
+end
